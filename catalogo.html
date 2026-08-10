@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | BH Barber House</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+    ========================================== -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span>BH</span>
+            <div>
+                <h1>BARBER</h1>
+                <p>HOUSE</p>
+            </div>
+        </a>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="catalogo.html" class="activo">Catálogo</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <a href="index.html#reserva" class="btn-reserva">Reservar cita</a>
+    </header>
+
+    <main class="catalogo-main">
+
+        <!-- SECCIÓN: CORTES FADE -->
+        <section class="seccion-catalogo">
+            <div class="titulo-seccion">
+                <p>DEGRADADOS & SOMBREADOS</p>
+                <h2>CORTES FADE</h2>
+            </div>
+
+            <div class="grid-catalogo">
+
+                <!-- CARD 1 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://i.pinimg.com/236x/14/5b/5f/145b5fab330a73352ce8a22b87b4fe4e.jpg" alt="Taper Fade">
+                        <span class="precio-tag">S/ 30.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Taper Fade</h3>
+                        <p>Desvanecido sutil concentrado únicamente en patillas y nuca. Ideal para un look limpio y natural.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Taper Fade" data-precio="S/ 30.00">Reservar</button>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/Low-Drop-Fade_600x600.webp?v=1750682896" alt="Low Fade">
+                        <span class="precio-tag">S/ 30.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Low Fade</h3>
+                        <p>Degradado bajo que inicia justo por encima de las orejas. Elegante, suave y pulido.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Low Fade" data-precio="S/ 30.00">Reservar</button>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://beardburys.com/img/cms/mid-fade-beardburys-hombre.jpg" alt="Mid Fade">
+                        <span class="precio-tag">S/ 30.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Mid Fade</h3>
+                        <p>El sombreado equilibrado a la altura media de la cabeza. Versátil y perfecto con barba.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Mid Fade" data-precio="S/ 30.00">Reservar</button>
+                    </div>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRspiI5cakNN6C-EJ4EQs5H9n1xECvex3FqMJb1-JP3xw3gc21-LU0N-kg&s=10" alt="High Fade">
+                        <span class="precio-tag">S/ 30.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>High Fade</h3>
+                        <p>Corte con contraste alto y marcado. Resalta al máximo el volumen en la parte superior.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="High Fade" data-precio="S/ 30.00">Reservar</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CORTES CLÁSICOS -->
+        <section class="seccion-catalogo">
+            <div class="titulo-seccion">
+                <p>TRADICIÓN & ELEGANCIA</p>
+                <h2>CORTES CLÁSICOS</h2>
+            </div>
+
+            <div class="grid-catalogo">
+
+                <!-- CARD 1 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://uppercutdeluxe.com/cdn/shop/articles/Executive-Side-Part-FeaturedImage.jpg?v=1727328545" alt="Raya al lado">
+                        <span class="precio-tag">S/ 25.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Side Part (Raya al Lado)</h3>
+                        <p>Estilo formal con división marcada a navaja. El clásico de negocios imponente.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Side Part (Raya al Lado)" data-precio="S/ 25.00">Reservar</button>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/Caesar-Cut-Fade.webp?v=1756122562" alt="Corte César / Crew Cut">
+                        <span class="precio-tag">S/ 25.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Crew Cut / César</h3>
+                        <p>Corte uniforme, corto y fácil de peinar hacia adelante. Higiénico y funcional.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Crew Cut / César" data-precio="S/ 25.00">Reservar</button>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://i.pinimg.com/736x/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut / Militar">
+                        <span class="precio-tag">S/ 25.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Buzz Cut (Militar)</h3>
+                        <p>Corte al ras con máquina para resaltar tus rasgos faciales y máxima practicidad.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Buzz Cut (Militar)" data-precio="S/ 25.00">Reservar</button>
+                    </div>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMbpAqUOkkmYB_u44Y4corf_AXQIGUdp4zWVpTJqBlWhzu4zs2Q7dWF-c&s=10" alt="Pompadour Clásico">
+                        <span class="precio-tag">S/ 25.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Pompadour Clásico</h3>
+                        <p>Gran tupé con volumen peinado hacia atrás y laterales pulidos tradicionalmente.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Pompadour Clásico" data-precio="S/ 25.00">Reservar</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: COMBOS ESPECIALES -->
+        <section class="seccion-catalogo">
+            <div class="titulo-seccion">
+                <p>PAQUETES COMPLETOS</p>
+                <h2>COMBOS PRO</h2>
+            </div>
+
+            <div class="grid-catalogo grid-combos">
+
+                <!-- COMBO 1 -->
+                <article class="card-corte card-destacada">
+                    <div class="card-imagen">
+                        <img src="https://barberiaensanjuandelrio.com/wp-content/uploads/2026/06/barba_hero-1.jpg" alt="Combo Corte + Barba">
+                        <span class="precio-tag">S/ 45.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Combo BH Dúo</h3>
+                        <p>Corte a elección (Fade o Clásico) + Perfilado y toalla caliente para barba.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Combo BH Dúo" data-precio="S/ 45.00">Reservar Combo</button>
+                    </div>
+                </article>
+
+                <!-- COMBO 2 -->
+                <article class="card-corte card-destacada">
+                    <div class="card-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmz3KNotK5_7xJQq5x726NPO9BZTHJXRSpKza4nY3nkA&s" alt="Experiencia VIP">
+                        <span class="precio-tag">S/ 100.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <h3>Experiencia VIP Full</h3>
+                        <p>Corte + Spa de Barba + Lavado relajante con hidratación + Bebida de cortesía.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Experiencia VIP Full" data-precio="S/ 100.00">Reservar VIP</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MÁS SERVICIOS -->
+        <section class="seccion-catalogo">
+            <div class="titulo-seccion">
+                <p>OTROS SERVICIOS</p>
+                <h2>MÁS SERVICIOS</h2>
+            </div>
+
+            <div class="grid-catalogo">
+
+                <!-- OTROS 1 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://i.pinimg.com/736x/88/c7/40/88c7401e71cfcfe32f5daf2a63e536e1.jpg" alt="Coloración">
+                        <span class="precio-tag">Desde S/ 35.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <div class="icono-servicio">✦</div>
+                        <h3>COLORACIÓN</h3>
+                        <p>Pintado de cabello, matizados y platinados para renovar tu estilo por completo.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Coloración" data-precio="Desde S/ 35.00">Consultar</button>
+                    </div>
+                </article>
+
+                <!-- OTROS 2 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOqfemB1iIZX70Vd_vuG750EU0eNcNQYJ7wdbTeYnqlUMb5yl8mOQF6Dq_&s=10" alt="Ondulación">
+                        <span class="precio-tag">Desde S/ 40.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <div class="icono-servicio">〰</div>
+                        <h3>ONDULACIÓN</h3>
+                        <p>Permanente y textura con movimiento natural adaptados al tipo de tu cabello.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Ondulación" data-precio="Desde S/ 40.00">Consultar</button>
+                    </div>
+                </article>
+
+                <!-- OTROS 3 -->
+                <article class="card-corte">
+                    <div class="card-imagen">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt06KQ3M_yQRUCEsjnN-Dnf1D2s47wshOUjELjEOnKgQ&s" alt="Diseños de barbería">
+                        <span class="precio-tag">Desde S/ 15.00</span>
+                    </div>
+                    <div class="card-contenido">
+                        <div class="icono-servicio">✧</div>
+                        <h3>DISEÑOS</h3>
+                        <p>Líneas, gráficos y figuras personalizadas a navaja para darle identidad única a tu corte.</p>
+                        <button class="btn-card btn-reserva-modal" data-servicio="Diseños" data-precio="Desde S/ 15.00">Consultar</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         VENTANA MODAL / FORMULARIO DINÁMICO
+    ========================================== -->
+    <div id="modalReserva" class="modal-reserva">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrarModal">&times;</span>
+            <h2>Confirmar Reserva</h2>
+            <p class="subtitulo-modal">Ingresa tu nombre, fecha y hora para agendar tu cita por WhatsApp</p>
+
+            <form id="formReservaWhatsApp">
+                <div class="campo-grupo">
+                    <label>Servicio Seleccionado:</label>
+                    <input type="text" id="modalServicio" readonly class="input-readonly">
+                </div>
+
+                <div class="campo-grupo">
+                    <label>Precio:</label>
+                    <input type="text" id="modalPrecio" readonly class="input-readonly">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="clienteNombre">Nombre Completo:</label>
+                    <input type="text" id="clienteNombre" placeholder="Tu nombre y apellido" required>
+                </div>
+
+                <div class="campo-flex">
+                    <div class="campo-grupo">
+                        <label for="clienteFecha">Fecha:</label>
+                        <input type="date" id="clienteFecha" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="clienteHora">Hora:</label>
+                        <input type="time" id="clienteHora" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-enviar-wa">Enviar Cita a WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BH Barber House. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- LÓGICA DE INTERACCIÓN Y ENVÍO A WHATSAPP -->
+    <script>
+        const modal = document.getElementById('modalReserva');
+        const cerrarModal = document.getElementById('cerrarModal');
+        const formReserva = document.getElementById('formReservaWhatsApp');
+        
+        const inputServicio = document.getElementById('modalServicio');
+        const inputPrecio = document.getElementById('modalPrecio');
+
+        // Escuchar clics en todos los botones de reserva del catálogo
+        document.querySelectorAll('.btn-reserva-modal').forEach(boton => {
+            boton.addEventListener('click', () => {
+                const servicio = boton.getAttribute('data-servicio');
+                const precio = boton.getAttribute('data-precio');
+
+                // Rellenar automáticamente los datos seleccionados
+                inputServicio.value = servicio;
+                inputPrecio.value = precio;
+
+                // Mostrar el modal
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Cerrar modal al hacer clic en la "X"
+        cerrarModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Función para convertir la hora de 24h (ej: 14:00) a 12h (ej: 2:00 PM)
+        function formatearHora12H(hora24) {
+            if (!hora24) return '';
+            let [horas, minutos] = hora24.split(':');
+            horas = parseInt(horas, 10);
+            const ampm = horas >= 12 ? 'PM' : 'AM';
+            horas = horas % 12;
+            horas = horas ? horas : 12; // Transforma 0 a 12
+            return `${horas}:${minutos} ${ampm}`;
+        }
+
+        // Procesar formulario y redirigir a WhatsApp
+        formReserva.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Número telefónico configurado (+51 978 974 338)
+            const numeroBarberia = "51978974338"; 
+
+            const servicio = inputServicio.value;
+            const precio = inputPrecio.value;
+            const nombre = document.getElementById('clienteNombre').value;
+            const fecha = document.getElementById('clienteFecha').value;
+            const hora24 = document.getElementById('clienteHora').value;
+            
+            // Conversión a formato 12 horas AM/PM
+            const hora12 = formatearHora12H(hora24);
+
+            // Construcción del mensaje predefinido
+            const mensaje = `Hola *BH Barber House*, quiero confirmar una cita:\n\n` +
+                            `*Servicio:* ${servicio}\n` +
+                            `*Precio:* ${precio}\n` +
+                            `*Nombre:* ${nombre}\n` +
+                            `*Fecha:* ${fecha}\n` +
+                            `*Hora:* ${hora12}`;
+
+            // Crear enlace codificado para la API de WhatsApp
+            const urlWhatsApp = `https://wa.me/${numeroBarberia}?text=${encodeURIComponent(mensaje)}`;
+
+            // Redirigir a WhatsApp
+            window.open(urlWhatsApp, '_blank');
+
+            // Limpiar y cerrar modal
+            modal.style.display = 'none';
+            formReserva.reset();
+        });
+    </script>
+</body>
+
+</html>

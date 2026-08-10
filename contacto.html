@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | BH Barber House </title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- ÍCONOS DE FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+    ========================================== -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span>BH</span>
+            <div>
+                <h1>BARBER</h1>
+                <p>HOUSE</p>
+            </div>
+        </a>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="contacto.html" class="activo">Contacto</a>
+        </nav>
+
+        <a href="index.html#reserva" class="btn-reserva">Reservar cita</a>
+    </header>
+
+    <main>
+
+        <!-- ======================================
+             SECCIÓN DE CONTACTO Y UBICACIÓN
+        ======================================= -->
+        <section class="reserva">
+            <div class="titulo-seccion">
+                <p>MARCA TU ESTILO</p>
+                <h2>CONTÁCTANOS Y ENCUÉNTRANOS</h2>
+            </div>
+
+            <div class="reserva-contenedor">
+
+                <!-- INFORMACIÓN DE CONTACTO -->
+                <div class="reserva-info">
+                    <span>BH</span>
+                    <h3>BARBER HOUSE </h3>
+                    <p>Especialistas en corte de cabello y barba. Visítanos o escríbenos directamente para agendar tu cita.</p>
+
+                    <div class="horario">
+                        <strong><i class="fa-solid fa-location-dot" style="color: var(--dorado); margin-right: 6px;"></i> DIRECCIÓN Y UBICACIÓN</strong>
+                        <p>Av. Los Próceres cuadra 12 Mz A Lt 18, Surco, Lima</p>
+                    </div>
+
+                    <div class="horario">
+                        <strong><i class="fa-solid fa-clock" style="color: var(--dorado); margin-right: 6px;"></i> HORARIOS DE ATENCIÓN</strong>
+                        <p>Lunes a Domingo: 10:30 AM a 9:00 PM</p>
+                    </div>
+
+                    <div class="horario">
+                        <strong><i class="fa-solid fa-hashtag" style="color: var(--dorado); margin-right: 6px;"></i> SÍGUENOS EN REDES</strong>
+                        <p style="margin-bottom: 8px;">
+                            <a href="https://www.instagram.com/BARBERHOUSE.1994" target="_blank" style="color: var(--texto); text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-brands fa-instagram" style="color: #E1306C; font-size: 1.2rem;"></i> 
+                                Instagram: <strong style="color: var(--dorado-claro);">BARBERHOUSE.1994</strong>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.facebook.com/search/top?q=BARBER%C3%8DA%20BARBER%20HOUSE%201994" target="_blank" style="color: var(--texto); text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-brands fa-facebook" style="color: #1877F2; font-size: 1.2rem;"></i> 
+                                Facebook: <strong style="color: var(--dorado-claro);">BARBERÍA BARBER HOUSE 1994</strong>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FORMULARIO DE CONTACTO -->
+                <div class="form-reserva">
+                    <form action="#" method="POST">
+                        
+                        <div class="campo">
+                            <label for="nombre">NOMBRE COMPLETO</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="fila">
+                            <div class="campo">
+                                <label for="telefono">TELÉFONO</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="978 974 338" required>
+                            </div>
+
+                            <div class="campo">
+                                <label for="correo">CORREO ELECTRÓNICO</label>
+                                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="asunto">ASUNTO</label>
+                            <select id="asunto" name="asunto">
+                                <option value="consulta">Consulta General</option>
+                                <option value="reserva">Información de Citas</option>
+                                <option value="corte-barba">Corte de Cabello y Barba</option>
+                                <option value="servicios">Otros Servicios</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensaje">MENSAJE</label>
+                            <input type="text" id="mensaje" name="mensaje" placeholder="Escribe tu consulta aquí..." style="height: 80px;" required>
+                        </div>
+
+                        <div class="botones-reserva">
+                            <button type="submit" class="btn-principal">ENVIAR MENSAJE</button>
+                            <a href="https://wa.me/51978974338?text=Hola,%20deseo%20reservar%20una%20cita%20en%20Barber%20House" target="_blank" class="btn-whatsapp">
+                                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> ESCRIBIR AL WHATSAPP
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- ======================================
+                 SECCIÓN DEL MAPA DE GOOGLE MAPS (A COLOR)
+            ======================================= -->
+            <div style="max-width: 1050px; margin: 50px auto 0 auto; border: 1px solid var(--borde);">
+                <div style="padding: 15px 20px; background: var(--fondo-secundario); border-bottom: 1px solid var(--borde); display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-map-location-dot" style="color: var(--dorado); font-size: 1.2rem;"></i>
+                    <span style="color: var(--dorado-claro); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">NUESTRA UBICACIÓN EN SANTIAGO DE SURCO</span>
+                </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.5182121735515!2d-76.98982352417758!3d-12.145021243763784!2m3!1f0!0f0!0s0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8178e22822d%3A0x88981452416a4959!2sAv.%20los%20Proceres%2012%2C%20Santiago%20de%20Surco%2015054!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; display: block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+        <div class="footer-logo">
+            <strong>BH</strong>
+            <span>BARBERHOUSE 1994</span>
+        </div>
+
+        <div class="footer-datos">
+            <p><i class="fa-solid fa-location-dot" style="color: var(--dorado);"></i> Av. Los Próceres cuadra 12 Mz A Lt 18, Surco</p>
+            <p><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> +51 978 974 338</p>
+            <p><i class="fa-solid fa-clock" style="color: var(--dorado);"></i> Lunes a Domingo: 10:30 AM a 9:00 PM</p>
+        </div>
+
+        <div class="footer-redes">
+            <a href="https://www.instagram.com/BARBERHOUSE.1994" target="_blank"><i class="fa-brands fa-instagram"></i> INSTAGRAM</a>
+            <span>•</span>
+            
+            <a href="https://wa.me/51978974338" target="_blank"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</a>
+        </div>
+
+        <p class="copyright">© 2026 BARBERHOUSE 1994. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

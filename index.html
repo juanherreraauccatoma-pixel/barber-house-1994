@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BH Barber House | Barbería</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+        /* AJUSTE DE PROPORCIONES HOMOGÉNEAS SEGÚN SERVICIOS / CATÁLOGO / CONTACTO */
+        .reserva-contenedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .reserva-info h3 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-reserva {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-reserva .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .form-reserva label {
+            font-size: 0.85rem;
+            color: #c5a059;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-reserva input[type="text"],
+        .form-reserva input[type="date"],
+        .form-reserva select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 0.95rem;
+            font-family: inherit;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-reserva input[type="text"]:focus,
+        .form-reserva input[type="date"]:focus,
+        .form-reserva select:focus {
+            border-color: #c5a059;
+        }
+
+        .grid-horas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-height: 160px;
+            overflow-y: auto;
+            padding: 8px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        .btn-hora {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #ccc;
+            padding: 8px 4px;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-hora:hover {
+            border-color: #c5a059;
+            color: #c5a059;
+        }
+
+        .btn-hora.seleccionado {
+            background: #c5a059;
+            color: #121212;
+            font-weight: bold;
+            border-color: #c5a059;
+        }
+
+        .oculto {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .reserva-contenedor {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .grid-horas {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     BARRA DE NAVEGACIÓN
+========================================== -->
+
+<header class="navbar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+        <span class="logo-circulo">BH</span>
+        <div class="logo-texto">
+            <h1>BARBER</h1>
+            <p>HOUSE</p>
+        </div>
+    </a>
+
+    <!-- MENÚ -->
+
+    <nav>
+
+        <a href="index.html" class="activo">
+            Inicio
+        </a>
+
+        <a href="servicios.html">
+            Servicios
+        </a>
+
+        <a href="catalogo.html">
+            Catálogo
+        </a>
+
+        <a href="contacto.html">
+            Contacto
+        </a>
+
+    </nav>
+
+
+    <!-- BOTÓN -->
+
+    <a
+        href="#reserva"
+        class="btn-reserva"
+    >
+        Reservar cita
+    </a>
+
+</header>
+
+
+
+<!-- ==========================================
+     CONTENIDO PRINCIPAL
+========================================== -->
+
+<main>
+
+
+    <!-- ==========================================
+     HERO / BANNER DE INICIO (FONDO COMPLETO)
+========================================== -->
+<section class="hero-full">
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-texto-full">
+        <p class="subtitulo">BARBERHOUSE 1994</p>
+        <h2>ESTILO<br>CLÁSICO</h2>
+        <p class="descripcion">Tradición, precisión y estilo en cada corte.<br>Vive la experiencia de una barbería hecha para caballeros.</p>
+        
+        <div class="hero-botones">
+            <a href="#reserva" class="btn-principal">AGENDAR CITA</a>
+            <a href="catalogo.html" class="btn-secundario">VER CATÁLOGO</a>
+        </div>
+    </div>
+</section>
+
+    <!-- ======================================
+         PRESENTACIÓN
+    ====================================== -->
+
+    <section class="presentacion">
+
+
+        <div class="titulo-seccion">
+
+            <p>
+                BARBERHOUSE 1994
+            </p>
+
+            <h2>
+                MÁS QUE UN CORTE
+            </h2>
+
+        </div>
+
+
+        <div class="presentacion-contenido">
+
+
+            <div class="presentacion-texto">
+
+                <p>
+                    En BH Barber House creemos que
+                    cada corte representa tu estilo.
+                </p>
+
+
+                <p>
+                    Combinamos la tradición de la
+                    barbería clásica con técnicas
+                    modernas para crear una experiencia
+                    única.
+                </p>
+
+
+                <p>
+                    Precisión, atención y personalidad
+                    en cada visita.
+                </p>
+
+            </div>
+
+
+            <div class="presentacion-frase">
+
+                <span>
+                    ESTILO
+                </span>
+
+                <strong>
+                    SIN
+                </strong>
+
+                <span>
+                    LÍMITES
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         SERVICIOS DESTACADOS
+    ====================================== -->
+
+    <section class="servicios">
+
+
+        <div class="titulo-seccion">
+
+            <p>
+                LO QUE HACEMOS
+            </p>
+
+            <h2>
+                NUESTROS SERVICIOS
+            </h2>
+
+        </div>
+
+
+        <div class="servicios-contenedor">
+
+
+            <!-- SERVICIO 1 -->
+
+            <article class="servicio">
+
+
+                <div class="icono">
+                    ✂
+                </div>
+
+
+                <span class="numero">
+                    01
+                </span>
+
+
+                <h3>
+                    BARBERÍA
+                </h3>
+
+
+                <p>
+                    Cortes fade, clásicos y
+                    personalizados realizados
+                    por nuestros barberos.
+                </p>
+
+
+            </article>
+
+
+
+            <!-- SERVICIO 2 -->
+
+            <article class="servicio">
+
+
+                <div class="icono">
+                    ⚔
+                </div>
+
+
+                <span class="numero">
+                    02
+                </span>
+
+
+                <h3>
+                    BARBA
+                </h3>
+
+
+                <p>
+                    Perfilado, arreglo y diseño
+                    para complementar tu estilo.
+                </p>
+
+
+            </article>
+
+
+
+            <!-- SERVICIO 3 -->
+
+            <article class="servicio">
+
+
+                <div class="icono">
+                    ✦
+                </div>
+
+
+                <span class="numero">
+                    03
+                </span>
+
+
+                <h3>
+                    TRANSFORMACIÓN
+                </h3>
+
+
+                <p>
+                    Coloración, ondulación y diseños
+                    personalizados.
+                </p>
+
+
+            </article>
+
+
+        </div>
+
+
+        <div class="centrar-boton">
+
+
+            <a
+                href="servicios.html"
+                class="btn-secundario"
+            >
+                CONOCER SERVICIOS
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         RESERVA
+    ====================================== -->
+
+    <section
+        id="reserva"
+        class="reserva"
+    >
+
+
+        <div class="titulo-seccion">
+
+            <p>
+                AGENDA TU VISITA
+            </p>
+
+            <h2>
+                RESERVA TU CITA
+            </h2>
+
+
+            <span class="texto-reserva">
+                Elige tu servicio, fecha y hora.
+                Nosotros nos encargamos del resto.
+            </span>
+
+
+        </div>
+
+
+
+        <div class="reserva-contenedor">
+
+
+            <div class="reserva-info">
+
+
+                <span>
+                    BH
+                </span>
+
+
+                <h3>
+                    TU ESTILO.
+                    <br>
+                    TU MOMENTO.
+                </h3>
+
+
+                <p>
+                    Reserva tu cita de manera
+                    rápida y sencilla.
+                </p>
+
+
+                <div class="horario">
+
+
+                    <strong>
+                        HORARIO
+                    </strong>
+
+
+                    <p>
+                        Lunes a Domingo
+                    </p>
+
+
+                    <p>
+                        10:30 AM — 9:00 PM
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FORMULARIO CORREGIDO Y UNIFICADO EN TAMAÑO -->
+
+            <form
+                id="formReserva"
+                class="form-reserva"
+            >
+
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ingresa tu nombre"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label for="servicio">
+                        Servicio
+                    </label>
+
+                    <select
+                        id="servicio"
+                        name="servicio"
+                        required
+                    >
+
+                        <option value="" disabled selected>
+                            Selecciona un servicio
+                        </option>
+
+                        <option value="Corte de cabello">
+                            Corte de cabello
+                        </option>
+
+                        <option value="Barba">
+                            Barba
+                        </option>
+
+                        <option value="Otros">
+                            Otros
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label for="corte">
+                        Tipo de corte
+                    </label>
+
+                    <select
+                        id="corte"
+                        name="corte"
+                        required
+                    >
+
+                        <option value="" disabled selected>
+                            Selecciona un corte
+                        </option>
+
+                        <option value="Taper Fade — S/ 30">
+                            Taper Fade — S/ 30
+                        </option>
+
+                        <option value="Low Fade — S/ 30">
+                            Low Fade — S/ 30
+                        </option>
+
+                        <option value="Mid Fade — S/ 30">
+                            Mid Fade — S/ 30
+                        </option>
+
+                        <option value="High Fade — S/ 30">
+                            High Fade — S/ 30
+                        </option>
+
+                        <option value="Side Part (Raya al lado) — S/ 25">
+                            Side Part (Raya al lado) — S/ 25
+                        </option>
+
+                        <option value="Crew Cut / César — S/ 25">
+                            Crew Cut / César — S/ 25
+                        </option>
+
+                        <option value="Buzz Cut (Militar) — S/ 25">
+                            Buzz Cut (Militar) — S/ 25
+                        </option>
+
+                        <option value="Pompadour Clásico — S/ 25">
+                            Pompadour Clásico — S/ 25
+                        </option>
+
+                        <option value="Otro">
+                            Escribir otro corte...
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- CAMPO OPCIONAL DE CORTE LIBRE -->
+                <div class="campo oculto" id="campoOtroCorte">
+
+                    <label for="otroCorteTexto">
+                        Especifica tu corte
+                    </label>
+
+                    <input
+                        type="text"
+                        id="otroCorteTexto"
+                        placeholder="Ej. Mullet, Mohicano, etc."
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="fecha">
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        name="fecha"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Hora seleccionada: <span id="horaTexto" style="color: #c5a059;">Ninguna</span>
+                    </label>
+
+                    <div class="grid-horas" id="gridHoras">
+                        <!-- Botones generados dinámicamente -->
+                    </div>
+
+                </div>
+
+
+
+                <div class="botones-reserva">
+
+                    <button
+                        type="submit"
+                        class="btn-principal"
+                        style="width: 100%; text-align: center; justify-content: center;"
+                    >
+                        CONFIRMAR RESERVA POR WHATSAPP
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+
+        <strong>
+            BH
+        </strong>
+
+
+        <span>
+            BARBERHOUSE 1994
+        </span>
+
+
+    </div>
+
+
+
+    <div class="footer-datos">
+
+
+        <p>
+            📍 Av. Los Próceres,
+            Cuadra 12, Mz A Lt 18
+            — Santiago de Surco
+        </p>
+
+
+        <p>
+            📱 978 974 338
+        </p>
+
+
+        <p>
+            🕐 Lunes a Domingo:
+            10:30 AM — 9:00 PM
+        </p>
+
+
+    </div>
+
+
+
+    <div class="footer-redes">
+
+
+        <a
+            href="https://www.instagram.com/barberhouse1994/"
+            target="_blank"
+        >
+            Instagram
+        </a>
+
+
+        <span>|</span>
+
+
+        <a
+            href="https://www.facebook.com/"
+            target="_blank"
+        >
+            Facebook
+        </a>
+
+
+    </div>
+
+
+
+    <p class="copyright">
+
+        © 2026 Barberhouse 1994.
+        Todos los derechos reservados.
+
+    </p>
+
+
+</footer>
+
+
+
+<script src="js/app.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const numeroDestino = "51978974338";
+    let horaSeleccionada = "";
+
+    // Establecer fecha mínima (Hoy)
+    const inputFecha = document.getElementById('fecha');
+    if (inputFecha) {
+        const hoy = new Date().toISOString().split('T')[0];
+        inputFecha.min = hoy;
+        inputFecha.value = hoy;
+    }
+
+    // Generar horas
+    const horasOpciones = [
+        "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
+        "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM",
+        "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM",
+        "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM"
+    ];
+
+    const gridHoras = document.getElementById('gridHoras');
+    const horaTexto = document.getElementById('horaTexto');
+
+    if (gridHoras) {
+        horasOpciones.forEach(hora => {
+            const btn = document.createElement('div');
+            btn.className = 'btn-hora';
+            btn.textContent = hora;
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.btn-hora').forEach(b => b.classList.remove('seleccionado'));
+                btn.classList.add('seleccionado');
+                horaSeleccionada = hora;
+                horaTexto.textContent = hora;
+            });
+            gridHoras.appendChild(btn);
+        });
+    }
+
+    // Campo condicional "Otro corte"
+    const selectCorte = document.getElementById('corte');
+    const campoOtroCorte = document.getElementById('campoOtroCorte');
+    const inputOtroCorte = document.getElementById('otroCorteTexto');
+
+    if (selectCorte) {
+        selectCorte.addEventListener('change', () => {
+            if (selectCorte.value === 'Otro') {
+                campoOtroCorte.classList.remove('oculto');
+                inputOtroCorte.setAttribute('required', 'required');
+            } else {
+                campoOtroCorte.classList.add('oculto');
+                inputOtroCorte.removeAttribute('required');
+            }
+        });
+    }
+
+    // Envío: Registro en BD (API) + Redirección a WhatsApp
+    const formReserva = document.getElementById('formReserva');
+    if (formReserva) {
+        formReserva.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            if (!horaSeleccionada) {
+                alert("Por favor, selecciona una hora para tu cita.");
+                return;
+            }
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const servicio = document.getElementById('servicio').value;
+            let tipoCorte = selectCorte.value;
+
+            if (tipoCorte === 'Otro') {
+                tipoCorte = inputOtroCorte.value.trim();
+            }
+
+            const fecha = inputFecha.value;
+
+            // Datos a enviar a la base de datos
+            const payload = {
+                nombre: nombre,
+                telefono: 'Consulta por WhatsApp',
+                servicio: servicio,
+                corte: tipoCorte,
+                fecha: fecha,
+                hora: horaSeleccionada
+            };
+
+            try {
+                // 1. Guardar en MySQL mediante la API Express
+                const res = await fetch('/api/reservar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    console.log('Reserva registrada en MySQL con ID:', data.id);
+                    
+                    // 2. Abrir confirmación en WhatsApp
+                    const mensaje = `Hola "BH Barber House", quiero confirmar una reserva:\n\n` +
+                                    `*Nombre: ${nombre}\n` +
+                                    `*Servicio: ${servicio}\n` +
+                                    `*Tipo de corte: ${tipoCorte}\n` +
+                                    `*Fecha: ${fecha}\n` +
+                                    `*Hora: ${horaSeleccionada}`;
+
+                    const urlWA = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
+                    window.open(urlWA, '_blank');
+                    formReserva.reset();
+                    horaTexto.textContent = "Ninguna";
+                    document.querySelectorAll('.btn-hora').forEach(b => b.classList.remove('seleccionado'));
+                } else {
+                    alert('Error en el servidor: ' + data.message);
+                }
+            } catch (err) {
+                console.error('Error enviando reserva:', err);
+                alert('No se pudo conectar con el servidor backend.');
+            }
+        });
+    }
+});
+</script>
+
+</body>
+
+</html>

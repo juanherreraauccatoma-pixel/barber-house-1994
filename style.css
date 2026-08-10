@@ -1,0 +1,2275 @@
+/* ==================================================
+   BH BARBER HOUSE 1994
+   ESTILO RÚSTICO / VINTAGE
+================================================== */
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: #17130f;
+
+    color: #e8dfd0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+:root {
+
+    --fondo: #17130f;
+
+    --fondo-secundario: #211b15;
+
+    --fondo-claro: #292117;
+
+    --dorado: #b8945c;
+
+    --dorado-claro: #d2b477;
+
+    --texto: #e8dfd0;
+
+    --texto-secundario: #a99d8c;
+
+    --borde: #51402c;
+
+}
+
+
+/* ==================================================
+   NAVEGACIÓN
+================================================== */
+
+.navbar {
+
+    width: 100%;
+
+    min-height: 90px;
+
+    padding:
+        15px
+        6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: rgba(
+        23,
+        19,
+        15,
+        0.97
+    );
+
+    border-bottom:
+        1px solid
+        var(--borde);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+/* ==========================================
+   NAVEGACIÓN Y LOGO CIRCULAR
+========================================== */
+
+/* Navbar principal */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 8%;
+    background-color: var(--fondo);
+    border-bottom: 1px solid rgba(184, 148, 92, 0.2);
+}
+
+/* Estructura del Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--texto);
+}
+
+/* Círculo dorado alrededor de "BH" */
+.logo > span {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dorado);
+    border-radius: 50%; /* <--- Vuelve el cuadro un círculo perfecto */
+    color: var(--dorado-claro);
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    flex-shrink: 0; /* <--- Evita que se aplaste en pantallas chicas */
+    box-sizing: border-box;
+}
+
+.logo h1 {
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 4px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.logo p {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 6px;
+    color: var(--dorado);
+    margin-bottom: 0;
+}
+
+/* Desplaza el menú "Inicio Servicios..." hacia la derecha */
+.navbar nav {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;   /* <--- Empuja el menú hacia la derecha */
+    margin-right: 40px;  /* <--- Separa el menú del botón "Reservar Cita" */
+}
+
+.navbar nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar nav a.activo,
+.navbar nav a:hover {
+    color: var(--dorado);
+}
+
+/* ==================================================
+   MENÚ
+================================================== */
+
+.navbar nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+}
+
+
+.navbar nav a {
+
+    position: relative;
+
+    color: var(--texto-secundario);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+
+}
+
+
+.navbar nav a:hover,
+.navbar nav a.activo {
+
+    color: var(--dorado-claro);
+
+}
+
+
+.navbar nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--dorado);
+
+    transition: 0.3s;
+
+}
+
+
+.navbar nav a:hover::after,
+.navbar nav a.activo::after {
+
+    width: 100%;
+
+}
+
+
+/* ==================================================
+   BOTÓN RESERVAR
+================================================== */
+
+.btn-reserva {
+
+    padding:
+        12px
+        19px;
+
+    border:
+        1px solid
+        var(--dorado);
+
+    color: var(--dorado-claro);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-reserva:hover {
+
+    background:
+        var(--dorado);
+
+    color:
+        var(--fondo);
+
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+
+    min-height:
+        calc(100vh - 90px);
+
+    padding:
+        100px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(184,148,92,0.12),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            90deg,
+            #17130f 0%,
+            #1b1611 55%,
+            #241c14 100%
+        );
+
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -180px;
+
+    top: 80px;
+
+    border:
+        1px solid
+        rgba(184,148,92,0.25);
+
+    border-radius: 50%;
+
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 12%;
+
+    top: 25%;
+
+    color: var(--dorado);
+
+    font-size: 30px;
+
+    opacity: 0.5;
+
+}
+
+
+.hero-contenido {
+
+    max-width: 700px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.subtitulo {
+
+    margin-bottom: 20px;
+
+    color: var(--dorado);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.hero h2 {
+
+    font-size:
+        clamp(
+            65px,
+            10vw,
+            130px
+        );
+
+    line-height: 0.85;
+
+    font-weight: normal;
+
+    letter-spacing: -3px;
+
+}
+
+
+.hero h2 span {
+
+    color: var(--dorado-claro);
+
+}
+
+
+.descripcion {
+
+    max-width: 530px;
+
+    margin-top: 35px;
+
+    color: var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+.botones {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+/* ==================================================
+   BOTONES GENERALES
+================================================== */
+
+.btn-principal {
+
+    display: inline-block;
+
+    padding:
+        14px
+        24px;
+
+    border:
+        1px solid
+        var(--dorado);
+
+    background:
+        var(--dorado);
+
+    color:
+        var(--fondo);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-principal:hover {
+
+    background:
+        var(--dorado-claro);
+
+    border-color:
+        var(--dorado-claro);
+
+}
+
+
+.btn-secundario {
+
+    display: inline-block;
+
+    padding:
+        14px
+        24px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    color:
+        var(--texto);
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-secundario:hover {
+
+    border-color:
+        var(--dorado);
+
+    color:
+        var(--dorado-claro);
+
+}
+
+
+/* ==================================================
+   DECORACIÓN HERO
+================================================== */
+
+.hero-decoracion {
+
+    position: absolute;
+
+    right: 12%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 350px;
+
+    height: 350px;
+
+    border:
+        1px solid
+        rgba(184,148,92,0.35);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    opacity: 0.7;
+
+}
+
+
+.hero-decoracion::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border:
+        1px solid
+        rgba(184,148,92,0.2);
+
+    border-radius: 50%;
+
+}
+
+
+.hero-decoracion span {
+
+    font-size: 70px;
+
+    color:
+        var(--dorado);
+
+    font-weight: bold;
+
+    z-index: 2;
+
+}
+
+
+.hero-decoracion p {
+
+    z-index: 2;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==================================================
+   SECCIONES
+================================================== */
+
+.presentacion,
+.servicios,
+.reserva {
+
+    padding:
+        110px 8%;
+
+}
+
+
+.presentacion {
+
+    background:
+        var(--fondo-secundario);
+
+}
+
+
+.servicios {
+
+    background:
+        var(--fondo);
+
+}
+
+
+.titulo-seccion {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.titulo-seccion p {
+
+    color:
+        var(--dorado);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.titulo-seccion h2 {
+
+    font-size:
+        clamp(
+            32px,
+            5vw,
+            55px
+        );
+
+    font-weight: normal;
+
+    line-height: 1;
+
+}
+
+
+/* ==================================================
+   PRESENTACIÓN
+================================================== */
+
+.presentacion-contenido {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.presentacion-texto p {
+
+    color:
+        var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.9;
+
+}
+
+
+.presentacion-frase {
+
+    min-height: 300px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+.presentacion-frase span {
+
+    font-size: 30px;
+
+    letter-spacing: 8px;
+
+}
+
+
+.presentacion-frase strong {
+
+    color:
+        var(--dorado);
+
+    font-size: 65px;
+
+    line-height: 1;
+
+}
+
+
+/* ==================================================
+   SERVICIOS
+================================================== */
+
+.servicios-contenedor {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.servicio {
+
+    min-height: 320px;
+
+    padding: 35px;
+
+    background:
+        var(--fondo-secundario);
+
+    border:
+        1px solid
+        var(--borde);
+
+    position: relative;
+
+    transition: 0.3s;
+
+}
+
+
+.servicio:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--dorado);
+
+}
+
+
+.icono {
+
+    font-size: 28px;
+
+    color:
+        var(--dorado);
+
+    margin-bottom: 20px;
+
+}
+
+
+.numero {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    color:
+        var(--borde);
+
+    font-size: 12px;
+
+}
+
+
+.servicio h3 {
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    font-weight: normal;
+
+}
+
+
+.servicio p {
+
+    color:
+        var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+.centrar-boton {
+
+    text-align: center;
+
+    margin-top: 45px;
+
+}
+
+
+/* ==================================================
+   RESERVA
+================================================== */
+
+.reserva {
+
+    background:
+        #1d1711;
+
+}
+
+
+.texto-reserva {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color:
+        var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+.reserva-contenedor {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 50px;
+
+}
+
+
+.reserva-info {
+
+    padding: 40px;
+
+    background:
+        var(--fondo);
+
+    border:
+        1px solid
+        var(--borde);
+
+}
+
+
+.reserva-info > span {
+
+    color:
+        var(--dorado);
+
+    font-size: 65px;
+
+    font-weight: bold;
+
+}
+
+
+.reserva-info h3 {
+
+    margin-top: 20px;
+
+    font-size: 35px;
+
+    line-height: 1.1;
+
+    font-weight: normal;
+
+}
+
+
+.reserva-info > p {
+
+    margin-top: 25px;
+
+    color:
+        var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+.horario {
+
+    margin-top: 50px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        var(--borde);
+
+}
+
+
+.horario strong {
+
+    color:
+        var(--dorado);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.horario p {
+
+    color:
+        var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    margin-top: 7px;
+
+}
+
+
+/* ==================================================
+   FORMULARIO
+================================================== */
+
+.form-reserva {
+
+    padding: 40px;
+
+    background:
+        var(--fondo-secundario);
+
+    border:
+        1px solid
+        var(--borde);
+
+}
+
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+}
+
+
+.campo label {
+
+    margin-bottom: 8px;
+
+    color:
+        var(--dorado-claro);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.campo input,
+.campo select {
+
+    width: 100%;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    outline: none;
+
+    background:
+        #17130f;
+
+    color:
+        var(--texto);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+.campo input:focus,
+.campo select:focus {
+
+    border-color:
+        var(--dorado);
+
+}
+
+
+.fila {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.botones-reserva {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+}
+
+
+.botones-reserva .btn-principal,
+.btn-whatsapp {
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+.btn-whatsapp {
+
+    padding:
+        14px
+        24px;
+
+    border:
+        1px solid
+        var(--dorado);
+
+    background:
+        transparent;
+
+    color:
+        var(--dorado-claro);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-whatsapp:hover {
+
+    background:
+        var(--dorado);
+
+    color:
+        var(--fondo);
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    padding:
+        55px 8% 25px;
+
+    text-align: center;
+
+    background:
+        #100d0a;
+
+    border-top:
+        1px solid
+        var(--borde);
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.footer-logo strong {
+
+    color:
+        var(--dorado);
+
+    font-size: 35px;
+
+}
+
+
+.footer-logo span {
+
+    color:
+        var(--texto);
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+}
+
+
+.footer-datos p {
+
+    display: inline-block;
+
+    margin:
+        5px 12px;
+
+    color:
+        var(--texto-secundario);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+}
+
+
+.footer-redes {
+
+    margin-top: 25px;
+
+}
+
+
+.footer-redes a {
+
+    color:
+        var(--dorado-claro);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.footer-redes span {
+
+    color:
+        var(--borde);
+
+    margin:
+        0 10px;
+
+}
+
+
+.copyright {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        #292118;
+
+    color:
+        #6f665b;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+
+    .navbar {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .navbar nav {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .hero-decoracion {
+
+        right: -120px;
+
+        opacity: 0.25;
+
+    }
+
+
+    .presentacion-contenido,
+    .reserva-contenedor {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .servicios-contenedor {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+
+    .navbar {
+
+        padding: 15px 5%;
+
+    }
+
+
+    .navbar nav {
+
+        gap: 15px;
+
+    }
+
+
+    .navbar nav a {
+
+        font-size: 9px;
+
+    }
+
+
+    .btn-reserva {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height: 650px;
+
+        padding:
+            70px 7%;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 65px;
+
+    }
+
+
+    .hero-decoracion {
+
+        display: none;
+
+    }
+
+
+    .botones {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .botones a {
+
+        text-align: center;
+
+    }
+
+
+    .presentacion,
+    .servicios,
+    .reserva {
+
+        padding:
+            75px 6%;
+
+    }
+
+
+    .servicios-contenedor {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .fila {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .reserva-info,
+    .form-reserva {
+
+        padding: 25px;
+
+    }
+
+
+    .footer-datos p {
+
+        display: block;
+
+    }
+
+}
+/* ==================================================
+   CATÁLOGO TIPO TARJETAS (ESTILO RÚSTICO / VINTAGE)
+================================================== */
+
+.catalogo-main {
+    padding: 90px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalogo-hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.seccion-catalogo {
+    margin-bottom: 70px;
+}
+
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.grid-combos {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Tarjeta individual */
+.card-corte {
+    background: var(--fondo-secundario);
+    border: 1px solid var(--borde);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card-corte:hover {
+    transform: translateY(-6px);
+    border-color: var(--dorado);
+}
+
+/* Contenedor de la Imagen */
+.card-imagen {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    background-color: var(--fondo-claro);
+    border-bottom: 1px solid var(--borde);
+}
+
+.card-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Etiqueta de precio sobre la imagen */
+.precio-tag {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: var(--dorado);
+    color: var(--fondo);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    padding: 5px 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border: 1px solid var(--dorado-claro);
+}
+
+/* Contenido textual */
+.card-contenido {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.icono-servicio {
+    font-size: 20px;
+    color: var(--dorado);
+    margin-bottom: 8px;
+}
+
+.card-contenido h3 {
+    margin-bottom: 10px;
+    color: var(--texto);
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.card-contenido p {
+    color: var(--texto-secundario);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Botón de la tarjeta */
+.btn-card {
+    display: block;
+    text-align: center;
+    background: transparent;
+    color: var(--dorado-claro);
+    border: 1px solid var(--dorado);
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-family: Georgia, "Times New Roman", serif;
+    transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+    background: var(--dorado);
+    color: var(--fondo);
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+    .catalogo-main {
+        padding: 50px 6%;
+    }
+    .grid-catalogo,
+    .grid-combos {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==================================================
+   CIRCULO CON IMAGEN - BANNER INICIO (HERO)
+================================================== */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 8%;
+    background: var(--fondo);
+    position: relative;
+    overflow: hidden;
+    gap: 40px;
+}
+
+.hero-texto {
+    max-width: 500px;
+    z-index: 2;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Contenedor circular con los aros decorativos */
+.hero-circulo-contenedor {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+/* Aro exterior fino */
+.hero-circulo-contenedor::before {
+    content: "";
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(184, 148, 92, 0.25);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Marco del círculo interior */
+.hero-circulo-borde {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--dorado);
+    padding: 10px;
+    box-sizing: border-box;
+    background: var(--fondo-secundario);
+}
+
+/* Imagen dentro del círculo */
+.hero-circulo-borde img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .hero-botones {
+        justify-content: center;
+    }
+
+    .hero-circulo-contenedor {
+        width: 270px;
+        height: 270px;
+    }
+
+    .hero-circulo-contenedor::before {
+        width: 310px;
+        height: 310px;
+    }
+}
+/* ==================================================
+   BANNER PRINCIPAL CON IMAGEN DE FONDO COMPLETA
+================================================== */
+.hero-full {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background-image: url('../img/Hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Capa oscura transparente para resaltar el texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        rgba(23, 19, 15, 0.95) 0%, 
+        rgba(23, 19, 15, 0.7) 50%, 
+        rgba(23, 19, 15, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+.hero-texto-full {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 40px 0;
+}
+
+.hero-texto-full h2 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+    margin: 15px 0;
+    color: var(--texto);
+}
+
+.hero-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Adaptativo para dispositivos móviles */
+@media (max-width: 768px) {
+    .hero-full {
+        min-height: 70vh;
+        padding: 0 6%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-overlay {
+        background: rgba(23, 19, 15, 0.85); /* Un poco más oscuro en móviles */
+    }
+
+    .hero-texto-full h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-botones {
+        justify-content: center;
+    }
+}
+/* ==================================================
+   BANNER DE SERVICIOS CON IMAGEN DE FONDO
+================================================== */
+
+.servicios-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    /* Ruta de la imagen de fondo */
+    background-image: url('../img/servicios-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Oscurece la imagen para resaltar los textos blancos y dorados */
+.servicios-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        rgba(18, 16, 14, 0.92) 0%, 
+        rgba(18, 16, 14, 0.75) 50%, 
+        rgba(18, 16, 14, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+/* Contenedor del texto por encima del fondo */
+.servicios-texto {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    padding: 40px 0;
+}
+
+.servicios-texto .subtitulo {
+    color: var(--dorado);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.servicios-texto h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--texto);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.servicios-texto .descripcion {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+    .servicios-hero {
+        min-height: 55vh;
+        padding: 0 6%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .servicios-texto h2 {
+        font-size: 2.5rem;
+    }
+}
+/* ==================================================
+   BANNER DE SERVICIOS (CENTRADO Y TEXTO AJUSTADO)
+================================================== */
+
+.servicios-hero {
+    position: relative;
+    min-height: 60vh; /* Altura ajustada */
+    display: flex;
+    align-items: center;      /* Centrado vertical */
+    justify-content: center;  /* Centrado horizontal */
+    padding: 60px 8%;
+    background-image: url('../img/servicios-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-align: center;       /* Alineación del texto al centro */
+}
+
+/* Capa oscura uniforme para fondo centrado */
+.servicios-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 14, 0.75);
+    z-index: 1;
+}
+
+/* Contenedor de texto */
+.servicios-texto {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.servicios-texto .subtitulo {
+    color: var(--dorado);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+/* Título con tamaño de letra ligeramente más pequeño */
+.servicios-texto h2 {
+    font-size: 2.8rem; /* Reducido de 3.5rem/3.8rem a 2.8rem */
+    line-height: 1.15;
+    color: var(--texto);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.servicios-texto .descripcion {
+    font-size: 0.95rem; /* Ajuste suave del texto descriptivo */
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .servicios-texto h2 {
+        font-size: 2.2rem;
+    }
+}
+/* ==================================================
+   BANNER SUPERIOR "LO QUE HACEMOS" CENTRADO
+================================================== */
+
+.servicios-hero-seccion {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    text-align: center;      /* Centra los textos */
+    padding: 70px 20px 40px;
+    background-color: var(--fondo);
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Elimina cualquier vector/arco de fondo sobrante si existía */
+.servicios-hero-seccion::before,
+.servicios-hero-seccion::after {
+    display: none;
+}
+
+.servicios-hero-contenido {
+    max-width: 800px;
+}
+
+.servicios-hero-contenido .subtitulo {
+    color: var(--dorado);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.servicios-hero-contenido h2 {
+    font-size: 3rem; /* Tamaño de letra proporcional */
+    color: var(--texto);
+    letter-spacing: 3px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Adaptativo para celulares */
+@media (max-width: 768px) {
+    .servicios-hero-contenido h2 {
+        font-size: 2.2rem;
+    }
+}
+/* ==================================================
+   BANNER "LO QUE HACEMOS" CON IMAGEN DE FONDO
+================================================== */
+
+.servicios-hero-seccion {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url('../img/servicios-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Capa oscura transparente para que el texto resalte */
+.servicios-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 14, 0.75);
+    z-index: 1;
+}
+
+/* Contenedor del texto centrado por encima de la imagen */
+.servicios-hero-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.servicios-hero-contenido .subtitulo {
+    color: var(--dorado);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.servicios-hero-contenido h2 {
+    font-size: 2.8rem;
+    color: var(--texto);
+    letter-spacing: 3px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+    .servicios-hero-seccion {
+        min-height: 40vh;
+    }
+
+    .servicios-hero-contenido h2 {
+        font-size: 2.2rem;
+    }
+}
+/* ==================================================
+   BANNER "LO QUE HACEMOS" CON IMAGEN DE FONDO
+================================================== */
+
+/* ==================================================
+   BANNER "LO QUE HACEMOS" CON NUEVA IMAGEN DE FONDO
+================================================== */
+
+.servicios-hero-seccion {
+    position: relative;
+    min-height: 75vh; /* Ocupa buena altura visual en la pantalla */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    
+    /* RUTA DE LA NUEVA IMAGEN */
+    background-image: url('../img/photo-01.avif');
+    
+    background-size: cover; /* Asegura que cubra TODO el ancho y alto del contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Capa oscura suave para que las letras resalten sobre la imagen */
+.servicios-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 14, 0.7); /* Filtro oscuro equilibrado */
+    z-index: 1;
+}
+
+/* Contenedor principal de textos */
+.servicios-hero-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.servicios-hero-contenido .subtitulo {
+    color: var(--dorado);
+    font-size: 1rem; /* Subtítulo más claro */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Título más grande */
+.servicios-hero-contenido h2 {
+    font-size: 3.8rem; /* Tamaño incrementado */
+    color: var(--texto);
+    letter-spacing: 4px;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+/* Reseña descriptiva */
+.servicios-hero-contenido .resena {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+    .servicios-hero-seccion {
+        min-height: 60vh;
+        padding: 60px 15px;
+    }
+
+    .servicios-hero-contenido h2 {
+        font-size: 2.6rem;
+    }
+
+    .servicios-hero-contenido .resena {
+        font-size: 1rem;
+    }
+}
+/* ==================================================
+   VENTANA MODAL DE RESERVA DIRECTA
+================================================== */
+.modal-reserva {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-contenido {
+    background-color: #1a1714;
+    border: 1px solid var(--dorado, #c5a059);
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.cerrar-modal:hover {
+    color: var(--dorado, #c5a059);
+}
+
+.modal-contenido h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--dorado, #c5a059);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.subtitulo-modal {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.campo-flex {
+    display: flex;
+    gap: 15px;
+}
+
+.campo-flex .campo-grupo {
+    flex: 1;
+}
+
+.campo-grupo label {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: #dddddd;
+}
+
+.campo-grupo input {
+    padding: 10px 12px;
+    background-color: #26221e;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.campo-grupo input:focus {
+    border-color: var(--dorado, #c5a059);
+}
+
+.input-readonly {
+    background-color: #12100e !important;
+    color: var(--dorado, #c5a059) !important;
+    font-weight: bold;
+    border-color: #333333 !important;
+}
+
+.btn-enviar-wa {
+    width: 100%;
+    padding: 12px;
+    background-color: #25d366;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar-wa:hover {
+    background-color: #1da851;
+}
+
+button.btn-card {
+    cursor: pointer;
+    border: none;
+}
